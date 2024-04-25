@@ -1,3 +1,141 @@
-.img {
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+/* TAKE LEAP SECTION*/
+
+.leapSection {
   width: 100%;
+  height: 2855px;
+  background-image: url(photos/hotAirBalloon.jpg);
+  background-size: contain;
+}
+
+.takeLeapTxt a {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffe100;
+  padding: 10px 20px;
+  font-size: 50px;
+  text-decoration: none;
+  text-align: center;
+  font-family: "Roboto Slab", serif;
+}
+
+.takeLeapTxt a:hover {
+  font-size: 55px;
+  transition: 600ms;
+}
+
+/* ABOUT SECTION */
+
+.aboutSection {
+  width: 100%;
+  height: 2852px;
+  background-image: url(photos/plane.jpg);
+  background-size: contain;
+}
+
+.linkBar-container {
+  width: 100%;
+  padding: 5px;
+  padding-top: 100px;
+  display: block;
+  text-align: center;
+  justify-content: space-between;
+  position: absolute;
+  top: 390%;
+}
+
+.link {
+  display: flex;
+  padding: 80px 10px;
+  font-size: 25px;
+  width: 130px;
+  color: #ffe100;
+  text-decoration: none;
+  font-family: "Roboto Slab", serif;
+  transition: 400ms;
+}
+.link:nth-child(1) {
+  text-decoration: underline;
+  text-decoration-color: white;
+}
+.link:nth-child(1):hover {
+  font-size: 30px;
+  transition: 400ms;
+}
+.link:nth-child(2):hover {
+  font-size: 30px;
+  transition: 400ms;
+  text-decoration: underline;
+  text-decoration-color: white;
+}
+
+.link:nth-child(3):hover {
+  font-size: 30px;
+  transition: 400ms;
+  text-decoration: underline;
+  text-decoration-color: white;
+}
+
+/* GALLERY SECTION */
+
+.gallerySection {
+  width: 100%;
+  height: 2852px;
+  background-image: url(photos/buildings.jpg);
+  background-size: contain;
+}
+
+.galleryBar-container {
+  width: 100%;
+  padding: 5px;
+  padding-top: 100px;
+  display: block;
+  text-align: center;
+  justify-content: space-between;
+  position: absolute;
+  top: 740%;
+}
+
+.galleryLink {
+  display: flex;
+  padding: 80px 10px;
+  font-size: 25px;
+  width: 130px;
+  color: #ffe100;
+  text-decoration: none;
+  font-family: "Roboto Slab", serif;
+  transition: 400ms;
+}
+.galleryLink:nth-child(2) {
+  transition: 400ms;
+  text-decoration: underline;
+  text-decoration-color: white;
+}
+.galleryLink:nth-child(1):hover {
+  font-size: 30px;
+  transition: 400ms;
+  text-decoration: underline;
+  text-decoration-color: white;
+}
+.galleryLink:nth-child(2):hover {
+  font-size: 30px;
+  transition: 400ms;
+  cursor: pointer;
+}
+
+.galleryLink:nth-child(3):hover {
+  font-size: 30px;
+  transition: 400ms;
+  text-decoration: underline;
+  text-decoration-color: white;
 }
