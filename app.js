@@ -92,7 +92,7 @@ function checksBox() {
     }
   }
 }
-
+// EASIER IF CHECKS ON CLICK AND CHANGES CLASS OF CLICKED BOXDIV
 checksBox();
 
 function addsX() {}
