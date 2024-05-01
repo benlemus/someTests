@@ -13,11 +13,26 @@
       <button id="playGameBtn">Play Game</button>
     </section> -->
 
-    <section class="playerSelect-container">
-      <button id="player1">PLAYER 1</button>
-      <button id="player2">PLAYER 2</button>
+    <section class="playerSelect-container" id="playerSelect-container">
+      <form action="" id="playerForm">
+        <label for="player1NameInput">Enter Name:</label>
+        <input
+          type="text"
+          name="player1NameInput"
+          id="player1NameInput"
+          placeholder="Player 1"
+        />
+        <label for="player2NameInput">Enter Name:</label>
+        <input
+          type="text"
+          name="player1NameInput"
+          id="player2NameInput"
+          placeholder="Player 2"
+        />
+        <button id="playBtn">PLAY</button>
+      </form>
     </section>
-    <section class="playerBarSection">
+    <section class="playerBarSectionNONE" id="playerBarSection">
       <div class="playerBar-container">
         <div class="player1-container">
           <h3 class="player1Name">Player 1</h3>
@@ -33,8 +48,18 @@
       </div>
     </section>
 
-    <section class="gameSection">
-      <div class="game"></div>
+    <section class="gameSectionNONE" id="gameSection">
+      <div class="game">
+        <div id="gridBox1" class="gridBox"></div>
+        <div id="gridBox2" class="gridBox"></div>
+        <div id="gridBox3" class="gridBox"></div>
+        <div id="gridBox4" class="gridBox"></div>
+        <div id="gridBox5" class="gridBox"></div>
+        <div id="gridBox6" class="gridBox"></div>
+        <div id="gridBox7" class="gridBox"></div>
+        <div id="gridBox8" class="gridBox"></div>
+        <div id="gridBox9" class="gridBox"></div>
+      </div>
     </section>
 
     <script src="app.js"></script>

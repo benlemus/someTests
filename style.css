@@ -5,7 +5,7 @@
   width: 7em;
   font-size: 2vw;
   color: red;
-  -webkit-text-stroke: 1px navy;
+  font-weight: 900;
 }
 
 /* PLAYER SELECT BUTTONS */
@@ -14,10 +14,18 @@
   background-color: red;
 }
 
+.playerSelect-containerNONE {
+  display: none;
+}
+
 /* GAME SCREEN CONTAINER */
 
 .playerBarSection {
   background-color: aqua;
+}
+
+.playerBarSectionNONE {
+  display: none;
 }
 
 /* PLAYER BAR */
@@ -43,8 +51,12 @@
   justify-content: center;
 }
 
+.gameSectionNONE {
+  display: none;
+}
+
 .game {
-  background-color: violet;
+  /* background-color: violet; */
   display: grid;
   grid-template-columns: 150px 150px 150px;
   grid-template-rows: 150px 150px 150px;
@@ -58,40 +70,40 @@
   font-size: 90px;
 }
 
-.game div:nth-child(1) {
+#gridBox1 {
   border-right: 4px solid black;
   border-bottom: 2px solid black;
 }
-.game div:nth-child(2) {
+#gridBox2 {
   border-right: 4px solid black;
   border-bottom: 2px solid black;
 }
-.game div:nth-child(3) {
+#gridBox3 {
   border-bottom: 2px solid black;
 }
-.game div:nth-child(4) {
-  border-right: 4px solid black;
-  border-bottom: 2px solid black;
-  border-top: 2px solid black;
-}
-.game div:nth-child(5) {
+#gridBox4 {
   border-right: 4px solid black;
   border-bottom: 2px solid black;
   border-top: 2px solid black;
 }
-.game div:nth-child(6) {
+#gridBox5 {
+  border-right: 4px solid black;
   border-bottom: 2px solid black;
   border-top: 2px solid black;
 }
-.game div:nth-child(7) {
+#gridBox6 {
+  border-bottom: 2px solid black;
+  border-top: 2px solid black;
+}
+#gridBox7 {
   border-right: 4px solid black;
   border-top: 2px solid black;
 }
-.game div:nth-child(8) {
+#gridBox8 {
   border-right: 4px solid black;
   border-top: 2px solid black;
 }
-.game div:nth-child(9) {
+#gridBox9 {
   border-top: 2px solid black;
 }
 
