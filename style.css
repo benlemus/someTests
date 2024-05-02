@@ -1,3 +1,9 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(aqua 5%, rgb(0, 143, 143));
+}
+
 /* LOGO */
 
 .logo {
@@ -8,10 +14,22 @@
   font-weight: 900;
 }
 
+.logo-container {
+  background-color: rgb(0, 255, 255);
+  height: 90px;
+}
+
+.logo-container img {
+  width: 170px;
+  transform: rotate(-4deg);
+  padding-left: 25px;
+}
+
 /* PLAYER SELECT BUTTONS */
 
 .playerSelect-container {
-  background-color: red;
+  /* background: linear-gradient(aqua, rgb(0, 143, 143)); */
+  height: 90vh;
 }
 
 .playerSelect-containerNONE {
@@ -21,7 +39,9 @@
 /* GAME SCREEN CONTAINER */
 
 .playerBarSection {
-  background-color: aqua;
+  background-color: pink;
+  display: flex;
+  /* justify-content: space-between; */
 }
 
 .playerBarSectionNONE {
@@ -31,22 +51,170 @@
 /* PLAYER BAR */
 
 .playerBar-container {
-  background-color: pink;
+  background-color: orange;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .player1-container {
   background-color: blue;
-  width: 70px;
+  width: 17vw;
 }
 
 .player2-container {
   background-color: rgb(47, 255, 6);
-  width: 70px;
+  width: 17vw;
 }
 
 /* GAME BOARD */
 
 .gameSection {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 50px;
+}
+
+.game-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  width: 550px;
+  background-color: antiquewhite;
+  border: 5px solid antiquewhite;
+  border-radius: 5%;
+  box-shadow: 5px 5px 20px;
+  z-index: 2;
+}
+
+.leaderboard-container {
+  display: flex;
+  width: 450px;
+  height: 500px;
+  background-color: rgb(199, 187, 172);
+  border: 5px solid rgb(199, 187, 172);
+  border-radius: 5%;
+  transform: rotate(10deg);
+  margin-top: 80px;
+  z-index: 1;
+  transition: 500ms;
+}
+
+.leaderboard-container:hover {
+  background-color: antiquewhite;
+  border: 5px solid antiquewhite;
+  transition: 500ms;
+}
+
+.material-symbols-outlined {
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+  font-size: 50px;
+  color: rgb(22, 22, 22);
+}
+
+/* .material-symbols-outlinedSecond {
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+  font-size: 50px;
+  color: rgb(22, 22, 22);
+} */
+
+.btnChoice-container #newSettingsIcon {
+  width: 50px;
+  height: 50px;
+}
+
+#oldSettingsIcon {
+  margin-left: 7px;
+}
+
+.closeMenuNONE {
+  display: none;
+}
+
+.closeMenu {
+  display: block;
+}
+.btnChoice-containerNONE {
+  display: flex;
+  width: 60px;
+  height: 60px;
+  background-color: antiquewhite;
+  border-left: 1px solid black;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  border-radius: 5%;
+  margin-top: 80px;
+  z-index: 1;
+  transition: 500ms;
+}
+
+.btnChoice-containerNONE:hover {
+  cursor: pointer;
+}
+
+.btnChoice-container {
+  width: 450px;
+  height: 500px;
+  background-color: rgb(199, 187, 172);
+  border: 5px solid rgb(199, 187, 172);
+  border-radius: 5%;
+  margin-top: 80px;
+  z-index: 1;
+  transition: 500ms;
+}
+
+.btnChoice-container:hover {
+  background-color: antiquewhite;
+  border: 5px solid antiquewhite;
+  transform: rotate(-10deg);
+}
+
+.restartGameBtn-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20%;
+  margin-bottom: 30px;
+}
+
+.restartGameBtnNONE {
+  display: none;
+}
+
+.restartGameBtn {
+  font-size: 40px;
+  background-color: aqua;
+  transition: 500ms;
+  height: 80px;
+}
+
+.restartGameBtn:hover {
+  background-color: rgb(1, 182, 182);
+  transition: 500ms;
+}
+
+.teamChangeBtnNONE {
+  display: none;
+}
+
+.teamChangeBtn {
+  font-size: 40px;
+  background-color: aqua;
+  transition: 500ms;
+  height: 80px;
+}
+
+.teamChangeBtn:hover {
+  background-color: rgb(1, 182, 182);
+  transition: 500ms;
+}
+
+.teamChangeBtn-container {
   display: flex;
   justify-content: center;
 }
@@ -55,17 +223,17 @@
   display: none;
 }
 
-.game {
-  /* background-color: violet; */
+#game {
   display: grid;
   grid-template-columns: 150px 150px 150px;
   grid-template-rows: 150px 150px 150px;
   width: 450px;
   text-align: center;
   border: 3px solid black;
+  box-shadow: 1px 1px 20px;
 }
 
-.game div {
+#game div {
   padding-top: 25px;
   font-size: 90px;
 }
@@ -120,3 +288,16 @@
   border: 1 solid black;
   background-color: lightgrey;
 } */
+
+.gameOverSection {
+  display: flex;
+}
+
+.gameOverSectionNONE {
+  display: none;
+}
+
+footer {
+  /* background-color: black; */
+  height: 100px;
+}

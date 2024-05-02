@@ -4,10 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <p class="logo">TIC-TAC-TOE</p>
+    <section class="logo-container">
+      <img src="photos/tictactoeLogoThick.png" alt="" />
+    </section>
+    <!-- <p class="logo">TIC-TAC-TOE</p> -->
 
     <!-- <section class="playGameBtn-container">
       <button id="playGameBtn">Play Game</button>
@@ -35,32 +44,51 @@
     <section class="playerBarSectionNONE" id="playerBarSection">
       <div class="playerBar-container">
         <div class="player1-container">
-          <h3 class="player1Name">Player 1</h3>
+          <h3 class="player1Name"></h3>
           <p>Team X</p>
         </div>
         <div class="playerTurn-container">
           <p id="playerTurn"></p>
         </div>
         <div class="player2-container">
-          <h3 class="player2Name">Player 2</h3>
+          <h3 class="player2Name"></h3>
           <p>Team O</p>
         </div>
       </div>
     </section>
 
     <section class="gameSectionNONE" id="gameSection">
-      <div class="game">
-        <div id="gridBox1" class="gridBox"></div>
-        <div id="gridBox2" class="gridBox"></div>
-        <div id="gridBox3" class="gridBox"></div>
-        <div id="gridBox4" class="gridBox"></div>
-        <div id="gridBox5" class="gridBox"></div>
-        <div id="gridBox6" class="gridBox"></div>
-        <div id="gridBox7" class="gridBox"></div>
-        <div id="gridBox8" class="gridBox"></div>
-        <div id="gridBox9" class="gridBox"></div>
+      <div class="btnChoice-containerNONE" id="btnChoice-container">
+        <span class="material-symbols-outlined"> settings </span>
+        <div class="restartGameBtn-container">
+          <button class="restartGameBtnNONE">RESTART</button>
+        </div>
+        <div class="teamChangeBtn-container">
+          <button class="teamChangeBtnNONE">CHANGE TEAM</button>
+        </div>
+      </div>
+      <div class="game-container">
+        <div id="game">
+          <div id="gridBox1" class="gridBox"></div>
+          <div id="gridBox2" class="gridBox"></div>
+          <div id="gridBox3" class="gridBox"></div>
+          <div id="gridBox4" class="gridBox"></div>
+          <div id="gridBox5" class="gridBox"></div>
+          <div id="gridBox6" class="gridBox"></div>
+          <div id="gridBox7" class="gridBox"></div>
+          <div id="gridBox8" class="gridBox"></div>
+          <div id="gridBox9" class="gridBox"></div>
+        </div>
+      </div>
+      <div class="leaderboard-container">
+        <h2>Previous Winners:</h2>
       </div>
     </section>
+
+    <section class="gameOverSectionNONE"></section>
+    <footer>
+      <div></div>
+    </footer>
 
     <script src="app.js"></script>
   </body>

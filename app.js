@@ -1,110 +1,27 @@
-// PLAYER 1 AND PLAYER 2 BUTTONS (FILLS X AND O)
-
-// const game = document.querySelector(".game");
-// const player1Btn = document.querySelector("#player1");
-// const player2Btn = document.querySelector("#player2");
-
-// function createPlayer1Board() {
-//   for (let i = 0; i < 3; i++) {
-//     for (let i = 0; i < 3; i++) {
-//       const newX = document.createElement("div");
-
-//       newX.innerText = "X";
-
-//       game.appendChild(newX);
-//     }
-//   }
-// }
-
-// function createPlayer2Board() {
-//   for (let i = 0; i < 3; i++) {
-//     for (let i = 0; i < 3; i++) {
-//       const newO = document.createElement("div");
-
-//       newO.innerText = "O";
-
-//       game.appendChild(newO);
-//     }
-//   }
-// }
-
-// player1Btn.addEventListener("click", function () {
-//   createPlayer1Board();
-// });
-
-// player2Btn.addEventListener("click", function () {
-//   createPlayer2Board();
-// });
-
-// ===============================================
-
-// make a dictionary that holds board cell value(x or o)
-// 2 functions:
-// when its x's turn
-// when its o's turn
-// make a func that checks  player turn then runs one of x function
-
-// store player name and score with dictionary and reset after game or save in mem
-
 const playBtn = document.getElementById("playBtn");
 const player1NameInput = document.querySelector("#player1NameInput");
 const player2NameInput = document.querySelector("#player2NameInput");
 const playerSelectContainer = document.querySelector("#playerSelect-container");
 const playerBarSection = document.querySelector("#playerBarSection");
 const gameSection = document.querySelector("#gameSection");
-
-// DIVS
+const player1Name = document.querySelector(".player1Name");
+const player2Name = document.querySelector(".player2Name");
 
 const gridBoxAll = document.querySelectorAll(".gridBox");
 
-// places X
-
-let gridBoxList = {
-  box1: "",
-  box2: "",
-  box3: "e",
-  box4: "",
-  box5: "e",
-  box6: "",
-  box7: "e",
-  box8: "",
-  box9: "",
-};
-
-function getsBoxKey() {
-  gameSection.addEventListener("click", (e) => {
-    return e.target.id;
-  });
-}
-
-// Checks if each box is empty
-
-function checksBox() {
-  let valueList = Object.values(gridBoxList);
-
-  for (i = 0; i < valueList.length; i++) {
-    if (valueList[i] == "") {
-      console.log(`Box ${i + 1} is open`);
-      boxDiv.classList.remove("gridBox");
-      boxDiv.classList.add("open");
-    } else {
-      console.log(`Box ${i + 1} is taken`);
-    }
-  }
-}
-// EASIER IF CHECKS ON CLICK AND CHANGES CLASS OF CLICKED BOXDIV
-checksBox();
-
-function addsX() {}
+let player1 = "";
+let player2 = "";
 
 playBtn.addEventListener("click", (e) => {
   e.preventDefault();
+  player1 = player1NameInput.value;
+  player2 = player2NameInput.value;
 
-  if (player1NameInput.value == "" && player2NameInput.value == "") {
-    console.log(player1NameInput.value);
-    console.log(player2NameInput.value);
+  if (player1NameInput.value !== "" && player2NameInput.value !== "") {
+    // adds names to playerBarSection
 
-    console.log(gridBoxList);
+    player1Name.innerText = `Player 1: ${player1.toUpperCase()}`;
+    player2Name.innerText = `Player 2: ${player2.toUpperCase()}`;
 
     // removes playerSelectContainer
 
@@ -120,7 +37,115 @@ playBtn.addEventListener("click", (e) => {
 
     gameSection.classList.remove("gameSectionNONE");
     gameSection.classList.add("gameSection");
+
+    // SHOWS FIRST TURN
+
+    playerTurnP.innerText = `${player1.toUpperCase()}'S TURN`;
   } else {
     alert("please fill out player names");
   }
+});
+
+// PLAYER TURN
+
+const playerTurnP = document.getElementById("playerTurn");
+const gameOverSection = document.querySelector(".gameOverSection");
+
+let playerTurn = playerTurnP.innerText;
+
+// GAME
+
+const game = document.getElementById("game");
+playerTurn = "Player1";
+
+turnCount = "";
+
+// PLAYER 1 TURN
+
+game.addEventListener("click", (e) => {
+  if (turnCount < 9) {
+    let target = e.target;
+    if (playerTurn == "Player1") {
+      if (target.innerText !== "") {
+        console.log("taken");
+      } else {
+        target.innerText = "X";
+        playerTurn = "Player2";
+        playerTurnP.innerText = `${player2.toUpperCase()}'S TURN`;
+        turnCount++;
+      }
+    }
+  }
+  if (turnCount == 9) {
+    let gameOverAlert = document.createElement("p");
+    gameOverAlert.innerText = "GAME OVER";
+    gameOverAlert.className = "gameOverAlert";
+
+    gameOverSection.appendChild(gameOverAlert);
+  }
+});
+
+// PLAYER 2 TURN
+
+game.addEventListener("click", (e) => {
+  if (turnCount < 9) {
+    let target = e.target;
+    if (playerTurn == "Player2") {
+      if (target.innerText !== "") {
+        console.log("taken");
+      } else {
+        target.innerText = "O";
+        playerTurn = "Player1";
+        playerTurnP.innerText = `${player1.toUpperCase()}'S TURN`;
+        turnCount++;
+      }
+    }
+  }
+});
+
+// function to check if boxs are all filled
+
+// function boxesFilled() {
+//   if (turnCount < 9) {
+//     for (let grid of gridBoxAll) {
+//       if (grid.innerText !== "") {
+//         return true;
+//       } else if (grid.innerText == "X" || grid.innerText == "O") {
+//         return false;
+//       }
+//     }
+//   } else {
+//     alert("GAME OVER");
+//   }
+// }
+
+const btnChoiceContainer = document.querySelector("#btnChoice-container");
+const restartGameBtn = document.querySelector(".restartGameBtnNONE");
+const teamChangeBtn = document.querySelector(".teamChangeBtnNONE");
+const settingsIcon = document.querySelector(".material-symbols-outlined");
+
+settingsIcon.addEventListener("click", () => {
+  btnChoiceContainer.classList.remove("btnChoice-containerNONE");
+  btnChoiceContainer.classList.add("btnChoice-container");
+
+  restartGameBtn.classList.remove("restartGameBtnNONE");
+  restartGameBtn.classList.add("restartGameBtn");
+
+  teamChangeBtn.classList.remove("teamChangeBtnNONE");
+  teamChangeBtn.classList.add("teamChangeBtn");
+
+  settingsIcon.id = "newSettingsIcon";
+
+  const newSettingsIcon = document.querySelector("#newSettingsIcon");
+
+  newSettingsIcon.addEventListener("click", () => {
+    btnChoiceContainer.classList.remove("btnChoice-container");
+    btnChoiceContainer.classList.add("btnChoice-containerNONE");
+
+    restartGameBtn.classList.remove("restartGameBtn");
+    restartGameBtn.classList.add("restartGameBtnNONE");
+
+    teamChangeBtn.classList.remove("teamChangeBtn");
+    teamChangeBtn.classList.add("teamChangeBtnNONE");
+  });
 });
