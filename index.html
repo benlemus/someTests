@@ -10,6 +10,13 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
     />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -24,21 +31,22 @@
 
     <section class="playerSelect-container" id="playerSelect-container">
       <form action="" id="playerForm">
-        <label for="player1NameInput">Enter Name:</label>
-        <input
-          type="text"
-          name="player1NameInput"
-          id="player1NameInput"
-          placeholder="Player 1"
-        />
-        <label for="player2NameInput">Enter Name:</label>
-        <input
-          type="text"
-          name="player1NameInput"
-          id="player2NameInput"
-          placeholder="Player 2"
-        />
-        <button id="playBtn">PLAY</button>
+        <div class="playerSelectDiv">
+          <h4 class="enterNamesText">Enter Names:</h4>
+          <input
+            type="text"
+            name="player1NameInput"
+            id="player1NameInput"
+            placeholder="Player 1"
+          />
+          <input
+            type="text"
+            name="player1NameInput"
+            id="player2NameInput"
+            placeholder="Player 2"
+          />
+          <button id="playBtn">PLAY</button>
+        </div>
       </form>
     </section>
     <section class="playerBarSectionNONE" id="playerBarSection">
