@@ -124,7 +124,38 @@ const restartGameBtn = document.querySelector(".restartGameBtnNONE");
 const teamChangeBtn = document.querySelector(".teamChangeBtnNONE");
 const settingsIcon = document.querySelector(".material-symbols-outlined");
 
-settingsIcon.addEventListener("click", () => {
+const leaderBoard = document.querySelector("#leaderBoard-container");
+
+const winnerText = document.querySelector("#w");
+const toDeleteText = document.querySelectorAll(".deleteText");
+
+// settingsIcon.addEventListener("click", () => {
+//   btnChoiceContainer.classList.remove("btnChoice-containerNONE");
+//   btnChoiceContainer.classList.add("btnChoice-container");
+
+//   restartGameBtn.classList.remove("restartGameBtnNONE");
+//   restartGameBtn.classList.add("restartGameBtn");
+
+//   teamChangeBtn.classList.remove("teamChangeBtnNONE");
+//   teamChangeBtn.classList.add("teamChangeBtn");
+
+//   settingsIcon.id = "newSettingsIcon";
+
+//   const newSettingsIcon = document.querySelector("#newSettingsIcon");
+
+//   newSettingsIcon.addEventListener("click", () => {
+//     btnChoiceContainer.classList.remove("btnChoice-container");
+//     btnChoiceContainer.classList.add("btnChoice-containerNONE");
+
+//     restartGameBtn.classList.remove("restartGameBtn");
+//     restartGameBtn.classList.add("restartGameBtnNONE");
+
+//     teamChangeBtn.classList.remove("teamChangeBtn");
+//     teamChangeBtn.classList.add("teamChangeBtnNONE");
+//   });
+// });
+
+function settingsClickOpen() {
   btnChoiceContainer.classList.remove("btnChoice-containerNONE");
   btnChoiceContainer.classList.add("btnChoice-container");
 
@@ -133,19 +164,60 @@ settingsIcon.addEventListener("click", () => {
 
   teamChangeBtn.classList.remove("teamChangeBtnNONE");
   teamChangeBtn.classList.add("teamChangeBtn");
+}
 
-  settingsIcon.id = "newSettingsIcon";
+function settingsClickClose() {
+  btnChoiceContainer.classList.remove("btnChoice-container");
+  btnChoiceContainer.classList.add("btnChoice-containerNONE");
 
-  const newSettingsIcon = document.querySelector("#newSettingsIcon");
+  restartGameBtn.classList.remove("restartGameBtn");
+  restartGameBtn.classList.add("restartGameBtnNONE");
 
-  newSettingsIcon.addEventListener("click", () => {
-    btnChoiceContainer.classList.remove("btnChoice-container");
-    btnChoiceContainer.classList.add("btnChoice-containerNONE");
+  teamChangeBtn.classList.remove("teamChangeBtn");
+  teamChangeBtn.classList.add("teamChangeBtnNONE");
+}
 
-    restartGameBtn.classList.remove("restartGameBtn");
-    restartGameBtn.classList.add("restartGameBtnNONE");
+function leaderBoardClickOpen() {
+  leaderBoard.classList.remove("leaderboard-containerNONE");
+  leaderBoard.classList.add("leaderboard-container");
 
-    teamChangeBtn.classList.remove("teamChangeBtn");
-    teamChangeBtn.classList.add("teamChangeBtnNONE");
-  });
+  winnerText.classList.remove("wNONE");
+  winnerText.classList.add("w");
+
+  winnerText.innerText = "PREVIOUS WINNERS:";
+
+  for (let item of toDeleteText) {
+    item.classList.remove("deleteText");
+    item.classList.add("deleteTextNONE");
+  }
+}
+
+function leaderBoardClickClose() {
+  leaderBoard.classList.remove("leaderboard-container");
+  leaderBoard.classList.add("leaderboard-containerNONE");
+
+  winnerText.classList.remove("w");
+  winnerText.classList.add("wNONE");
+  winnerText.innerText = "W";
+
+  for (let item of toDeleteText) {
+    item.classList.remove("deleteTextNONE");
+    item.classList.add("deleteText");
+  }
+}
+
+settingsIcon.addEventListener("click", () => {
+  if (btnChoiceContainer.className == "btnChoice-containerNONE") {
+    settingsClickOpen();
+  } else {
+    settingsClickClose();
+  }
+});
+
+leaderBoard.addEventListener("click", () => {
+  if (leaderBoard.className == "leaderboard-containerNONE") {
+    leaderBoardClickOpen();
+  } else {
+    leaderBoardClickClose();
+  }
 });
